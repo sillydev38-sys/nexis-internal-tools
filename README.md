@@ -29,8 +29,11 @@ The team used a microservice called the **Clearance Requester** to retrieve priv
 **Endpoint (internal/dev host):**
 
 POST http://HOST:8080/api/request_flag
+
 POST /auth/login
+
 POST /reauth.php
+
 GET/POST /project_thick.php
 
 

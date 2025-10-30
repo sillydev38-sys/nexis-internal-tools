@@ -62,7 +62,7 @@ Authenticate with your credentials to receive a valid, time-limited **`session_t
 
 Used to refresh an existing, valid session token before it expires.
 
-* **Endpoint:** `POST /auth/reauthenticate`
+* **Endpoint:** `POST /reauth.php`
 * **Description:** Renews the validity of an active `session_token`, returning a refreshed session object.
 * **Payload (JSON):**
 
@@ -76,7 +76,7 @@ Used to refresh an existing, valid session token before it expires.
 
 Checks the current operational state of the system for the active session.
 
-* **Endpoint:** `GET /status/count`
+* **Endpoint:** `GET /status_count.php`
 * **Description:** Retrieves the current system state count.
 * **Query Parameter:** The **`session_token`** must be passed as a query parameter.
 
@@ -84,7 +84,7 @@ Checks the current operational state of the system for the active session.
 
 This is the primary restricted endpoint for retrieving a key/flag.
 
-* **Endpoint:** `POST /flag/key`
+* **Endpoint:** `GET/POST /project_thick.php`
 * **Description:** Attempts to retrieve the key/flag. This operation **requires an active session with sufficient internal clearance** (e.g., a specific user role or permission level).
 * **Payload (JSON):**
 

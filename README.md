@@ -29,6 +29,10 @@ The team used a microservice called the **Clearance Requester** to retrieve priv
 **Endpoint (internal/dev host):**
 
 POST http://HOST:8080/api/request_flag
+POST /auth/login
+POST /reauth.php
+GET/POST /project_thick.php
+
 
 **Headers**
 Content-Type: application/json
@@ -61,7 +65,8 @@ Used to refresh an existing, valid session token before it expires.
 
 ```json
 {
-  "session_token": "<PUT_TOKEN_HERE>"
+  "session_token": "<SESSION_TOKEN>",
+  "role": "role: current_role"
 }
 ```
 ### 3. Status Count

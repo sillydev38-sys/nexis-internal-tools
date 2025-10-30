@@ -36,12 +36,56 @@ Accept: application/json
 X-Api-Token: NX-DEV-CTF-9F3A-B0C1
 
 
-**Example JSON payload**
+### 1. Initial Login
+
+Authenticate with your credentials to receive a valid, time-limited **`session_token`** that must be used in subsequent requests.
+
+* **Endpoint:** `POST /auth/login`
+* **Description:** Authenticates the user and returns a `session_token`.
+* **Payload (JSON):**
+
 ```json
 {
   "username": "leaker_12",
-  "role": "role:phase-theta"
+  "password": "GHcreds_ctf_12!"
 }
+```
+
+### 2. Re-authentication (Token Renewal)
+
+Used to refresh an existing, valid session token before it expires.
+
+* **Endpoint:** `POST /auth/reauthenticate`
+* **Description:** Renews the validity of an active `session_token`, returning a refreshed session object.
+* **Payload (JSON):**
+
+```json
+{
+  "session_token": "<PUT_TOKEN_HERE>"
+}
+```
+### 3. Status Count
+
+Checks the current operational state of the system for the active session.
+
+* **Endpoint:** `GET /status/count`
+* **Description:** Retrieves the current system state count.
+* **Query Parameter:** The **`session_token`** must be passed as a query parameter.
+
+### 4. Key Retrieval (Restricted)
+
+This is the primary restricted endpoint for retrieving a key/flag.
+
+* **Endpoint:** `POST /flag/key`
+* **Description:** Attempts to retrieve the key/flag. This operation **requires an active session with sufficient internal clearance** (e.g., a specific user role or permission level).
+* **Payload (JSON):**
+
+```json
+{
+  "session_token": "<PUT_TOKEN_HERE>"
+}
+```
+
 
 ## ROLES
 

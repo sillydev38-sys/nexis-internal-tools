@@ -28,7 +28,7 @@ The team used a microservice called the **Clearance Requester** to retrieve priv
 
 **Endpoint (internal/dev host):**
 
-POST http://HOST:8080/api/request_flag
+POST http://HOST:8080/
 
 POST /auth/login
 
